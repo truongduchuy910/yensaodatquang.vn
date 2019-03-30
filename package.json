@@ -1,0 +1,23 @@
+{
+  "name": "yensaodatquang.vn",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/truongduchuy910/yensaodatquang.vn.git"
+  },
+  "author": "Tran Ngoc Huy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/truongduchuy910/yensaodatquang.vn/issues"
+  },
+  "homepage": "https://github.com/truongduchuy910/yensaodatquang.vn#readme",
+  "dependencies": {
+    "reload": "^2.4.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
