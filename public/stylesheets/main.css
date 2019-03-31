@@ -1,27 +1,130 @@
-.jumbotron {
-  background: #532F8C;
-  color: white;
-  padding-bottom: 80px; }
-  .jumbotron .btn-primary {
-    background: #845ac7;
-    border-color: #845ac7; }
-    .jumbotron .btn-primary:hover {
-      background: #7646c1; }
-  .jumbotron p {
-    color: #d9ccee;
-    max-width: 75%;
-    margin: 1em auto 2em; }
-  .navbar + .jumbotron {
-    margin-top: -20px; }
-  .jumbotron .lang-logo {
-    display: block;
-    background: #B01302;
-    border-radius: 50%;
-    overflow: hidden;
-    width: 100px;
-    height: 100px;
-    margin: auto;
-    border: 2px solid white; }
-    .jumbotron .lang-logo img {
-      max-width: 100%; }
+@import url('https://fonts.googleapis.com/css?family=Vollkorn');
+body {
+  font-family: 'Vollkorn', serif;
+}
 
+.quote-area-bg {
+  background: rgba(0, 0, 0, 0) url(/images/decorates/swiftlet.jpg) repeat;
+  opacity: 0.8;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+h4 {
+  padding-top: 20px;
+  color: brown;
+}
+
+.sp-width-A4 {
+  max-width: 210mm;
+}
+
+.sp-container {
+  width: 100%;
+  background-color: white;
+}
+
+.sp-break {
+  margin-bottom: 30px;
+}
+
+.sp-banner-brown {
+  background-color: brown;
+  color: white;
+  border-bottom: 5px !important;
+  border-bottom-color: darkgreen !important;
+  padding: 20px;
+}
+
+.sp-logo {
+  position: fixed;
+  z-index: 110;
+  max-width: 60px;
+  max-height: 60px;
+  margin: 10px;
+  left: calc(50% - 30px);
+}
+
+.sp-navbar-item {
+  position: fixed;
+  width: 100px;
+  z-index: 110;
+  top: 14px;
+  text-align: center;
+  color: brown;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.sp-item-left-3 {
+  left: calc(50% - 20px - 100px);
+}
+
+.sp-item-left-2 {
+  left: calc(50% - 20px - 200px);
+}
+
+.sp-item-left-1 {
+  left: calc(50% - 20px - 300px);
+}
+
+.sp-item-right-1 {
+  left: calc(50% - 55px + 100px);
+}
+
+.sp-item-right-2 {
+  left: calc(50% - 55px + 200px);
+}
+
+.sp-item-right-3 {
+  left: calc(50%  - 55px + 300px);
+}
+
+p {
+  text-align: justify !important;
+}
+
+img {
+  margin-bottom: 20px;
+}
+
+.sp-banner-slide {
+  width: 100%;
+}
+
+.sp-navbar {
+  width: 100%;
+  position: fixed;
+  z-index: 101;
+}
+
+.sp-navbar>div>a {
+  padding-top: 10px;
+  color: brown !important;
+}
+
+.sp-navbar-bg {
+  position: fixed;
+  z-index: 100;
+  height: 40px;
+  width: 100%;
+  background-color: white;
+  opacity: 0.9;
+}
+.sp-page {
+  position: relative;
+}
+.sp-intro {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px #afbfd0;
+}
+.icon-commiting {
+  padding-top: 30px;
+  width: 60px;
+}
+.jumbotron {
+  margin-bottom: 0px !important;
+}
