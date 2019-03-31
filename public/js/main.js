@@ -12,7 +12,7 @@ modify_intro();
 document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", function () {
         if (pageYOffset > 100) {
-            document.documentElement.scrollTop = 0;
+            //document.documentElement.scrollTop = 0;
         }
         
     })
