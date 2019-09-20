@@ -15,6 +15,7 @@ function change_alias(alias) {
     str = str.replace(/đ/g, "d");
     str = str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g, " ");
     str = str.replace(/ + /g, " ");
+    str = str.replace(/ /g, "-");
     str = str.trim();
     return str;
 }
@@ -25,16 +26,17 @@ module.exports = {
             res.render('client/pages/dashboard')
         },
         createPost: function (req, res) {
-            console.log(req.body)
             post.insertMany({
                 name: req.body.fields.name,
                 images: req.body.files,
-                url: change_alias(req.body.fields.name)
+                url: '/pt/' + change_alias(req.body.fields.name)
             }, (err, docs) => {
                 content.insertMany({
                     modifyDate: Date(),
-                    postId: docs[0]._id
+                    postId: docs[0]._id,
+                    type: config.post.content[0].type
                 }, (err, docss) => {
+                    console.log(docss)
                     res.redirect('/ad/editPost/' + docs[0]._id)
 
                 })
@@ -45,11 +47,13 @@ module.exports = {
                 name: req.body.fields.name,
                 price: req.body.fields.price,
                 images: req.body.files,
-                url: change_alias(req.body.fields.name)
+                url: '/sp/' + change_alias(req.body.fields.name)
             }, (err, docs) => {
                 information.insertMany({
                     modifyDate: Date(),
-                    productId: docs[0]._id
+                    productId: docs[0]._id,
+                    type: config.product.information[0].type
+
                 }, (err, docss) => {
                     res.redirect('/ad/editProduct/' + docs[0]._id)
 
@@ -221,38 +225,28 @@ module.exports = {
         getContent: function (req, res) {
             content.findOne({
                 postId: req.body.postId,
-                name: req.body.name,
+                type: req.body.type,
             }, (err, docs) => {
                 res.send(docs)
             })
         },
         updateContent: function (req, res) {
-            var name = req.body.name
+            var type = req.body.type
             var delta = JSON.parse(req.body.delta)
             post.findByIdAndUpdate(req.body.postId, {
                 modifyDate: Date(),
                 description: req.body.description.slice(0, 200) + '...'
             }, (err, docs) => {
-                console.log('update description ', docs)
             })
             content.findOneAndUpdate({
-                modifyDate: Date(),
                 postId: req.body.postId,
-                name: name,
+                type: type,
             }, {
+                modifyDate: Date(),
                 delta: delta
             }, (err, docs) => {
-                if (docs) {
-                    res.send(docs)
-                } else {
-                    content.insertMany({
-                        postId: req.body.postId,
-                        name: name,
-                        delta: delta
-                    }, (err, docs) => {
-                        res.send(docs)
-                    })
-                }
+                console.log(docs)
+                res.send(docs)
             })
         },
         updateImage: function (req, res) {
@@ -366,32 +360,23 @@ module.exports = {
         getInformation: function (req, res) {
             information.findOne({
                 productId: req.body.productId,
-                name: req.body.name,
+                type: req.body.type,
             }, (err, docs) => {
                 res.send(docs)
             })
         },
         updateInformation: function (req, res) {
-            var name = req.body.name
+            var type = req.body.type
             var delta = JSON.parse(req.body.delta)
             information.findOneAndUpdate({
-                modifyDate: Date(),
                 productId: req.body.productId,
-                name: name,
+                type: type,
             }, {
+                modifyDate: Date(),
                 delta: delta
             }, (err, docs) => {
-                if (docs) {
-                    res.send(docs)
-                } else {
-                    information.insertMany({
-                        productId: req.body.productId,
-                        name: name,
-                        delta: delta
-                    }, (err, docs) => {
-                        res.send(docs)
-                    })
-                }
+                console.log(docs)
+                res.send(docs)
             })
         },
     },

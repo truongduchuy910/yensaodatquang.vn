@@ -27,6 +27,6 @@ require('./controllers/client')(app)
 require('./controllers/public')(app)
 require('./controllers/database')(app)
 app.get('*', function (req, res) {
-  res.render('404')
+  res.render('public/pages/404')
 })
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))

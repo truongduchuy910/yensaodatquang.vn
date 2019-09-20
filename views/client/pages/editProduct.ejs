@@ -130,27 +130,27 @@
                         window.location.reload()
                     })
                 },
-                getInformation: function (productId, name) {
+                getInformation: function (productId, type) {
                     $.post('/ad/editProduct/getInformation', {
                         productId: productId,
-                        name: name
+                        type: type
                     }, (data) => {
                         console.log(data)
-                        $.notify("Tải " + data.name, {
+                        $.notify("Tải " + data.type, {
                             globalPosition: "bottom left",
                             className: "success"
                         });
                         quill.setContents(data.delta)
                     })
                 },
-                updateInformation: function (productId, name, delta) {
+                updateInformation: function (productId, type, delta) {
                     delta = JSON.stringify(delta)
                     $.post('/ad/editProduct/updateInformation', {
                         productId: productId,
-                        name: name,
+                        type: type,
                         delta: delta
                     }, (data) => {
-                        $.notify("Đã lưu thay đổi " + data.name, {
+                        $.notify("Đã lưu thay đổi " + data.type, {
                             globalPosition: "bottom left",
                             className: "info"
                         });

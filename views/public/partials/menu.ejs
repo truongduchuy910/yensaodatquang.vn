@@ -1,5 +1,23 @@
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            xfbml: true,
+            version: 'v4.0'
+        });
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
 <nav class="navbar navbar-light navbar-expand-md fixed-top bg-light shadow">
-    <div class="container"><img class="m-2" style="width: 40px;" src="assets/img/yensao.jpg">
+    <div class="container"><img class="m-2" style="width: 40px;" src="/assets/img/yensao.jpg">
         <a class="navbar-brand textColor" href="/">
             <h4>Yến Sào Đất Quảng</h4>
         </a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle

@@ -1,3 +1,5 @@
+<% function formatMoney(n, c, d, t) { var c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "." : d, t = t == undefined ? "," : t, s = n < 0 ? "-" : "", i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))), j = (j = i.length) > 3 ? j % 3 : 0; return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : ""); }; %>
+
 <!DOCTYPE html>
 <html>
 
@@ -13,41 +15,49 @@
                 <div class="row">
                     <div class="col-md-8 col-lg-8">
                         <div class="row">
-                            <div class="col-md-6 col-lg-7"><img class="w-100" src="assets/img/YSDQ%20274.JPG"></div>
+                            <div class="col-md-6 col-lg-7"><img class="w-100" src="<%=product.images[0]%>"></div>
                             <div class="col-md-6 col-lg-5">
                                 <div>
-                                    <h3 class="textColor">Yến Hủ Sấy Khô</h3>
+                                    <h3 class="textColor"><%=product.name%></h3>
                                     <hr>
-                                    <h4>100.000</h4>
-                                    <h5 class="text-secondary oldPrice">120.000</h5>
+                                    <h4><%=formatMoney(product.price,0)%></h4>
+                                    <!-- <h5 class="text-secondary oldPrice">120.000</h5> -->
                                 </div>
                             </div>
                         </div>
                         <div class="my-4 p-2" style="background-color: #f4f7f7;">
                             <h3 class="text-center textColor">Mô Tả Sản Phẩm</h3>
-                            <div class="text-center my-4"><img style="width: 150px;" src="assets/img/divider.png"></div>
+                            <div class="text-center my-4"><img style="width: 150px;" src="/assets/img/divider.png">
+                            </div>
+                            <div class="text-justify p-3">
+                                <%-information%>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-lg-4 col-xl-4">
                         <h3 class="text-center textColor">Cam Kết Chất Lượng</h3>
-                        <div class="text-center my-4"><img style="width: 150px;" src="assets/img/divider.png"></div>
+                        <div class="text-center my-4"><img style="width: 150px;" src="/assets/img/divider.png"></div>
                         <ul>
                             <li>Tổ Yến Trên Đá Tự Nhiên Được Làm Sạch Thủ Công<br></li>
                             <li>Yến Sơ Chế 100% nguyên chất và làm theo loại mà khách hàng yêu cầu. Hoàn toàn không có
                                 các thành phần khác.<br></li>
                         </ul>
                         <h3 class="text-center textColor">Sản Phẩm Tương Tự</h3>
-                        <div class="text-center my-4"><img style="width: 150px;" src="assets/img/divider.png"></div>
+                        <div class="text-center my-4"><img style="width: 150px;" src="/assets/img/divider.png"></div>
                         <div class="row">
+                            <%orthes.forEach(product=>{%>
                             <div class="col-8 m-auto">
-                                <a href="#">
-                                    <div class="shadow"><img class="w-100 mb-4" src="assets/img/YSDQ%20274.JPG">
-                                        <h5 class="text-center textColor">Yến Hủ Tự Chưng</h5>
-                                        <p class="text-center p-0 m-0 font-weight-bold">100.000</p>
-                                        <p class="text-center text-secondary oldPrice pb-4">120.000</p>
+                                <a href="<%=product.url%>">
+                                    <div class="shadow pb-4"><img class="w-100 mb-4" src="<%=product.images[0]%>">
+                                        <h5 class="text-center textColor"><%=product.name%></h5>
+                                        <p class="text-center p-0 m-0 font-weight-bold">
+                                            <%=formatMoney(product.price,0)%></p>
+                                        <!-- <p class="text-center text-secondary oldPrice">120.000</p> -->
                                     </div>
                                 </a>
                             </div>
+                            <%})%>
+
                         </div>
                     </div>
                 </div>

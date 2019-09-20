@@ -2,7 +2,7 @@
     "product": {
         "information": [
             {
-                "name": "Mô tả",
+                "type": "Mô Tả",
                 "delta": null
             }
         ],
@@ -26,7 +26,7 @@
         ],
         "content": [
             {
-                "name": "Nội Dung",
+                "type": "Nội Dung",
                 "delta": null
             }
         ]

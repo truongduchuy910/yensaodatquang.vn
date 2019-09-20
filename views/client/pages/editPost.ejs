@@ -127,27 +127,28 @@
                         window.location.reload()
                     })
                 },
-                getContent: function (postId, name) {
+                getContent: function (postId, type) {
                     $.post('/ad/editPost/getContent', {
                         postId: postId,
-                        name: name
+                        type: type
                     }, (data) => {
-                        $.notify("Tải " + data.name, {
+                        console.log(data)
+                        $.notify("Tải " + data.type, {
                             globalPosition: "bottom left",
                             className: "success"
                         });
                         quill.setContents(data.delta)
                     })
                 },
-                updateContent: function (postId, name, delta, description) {
+                updateContent: function (postId, type, delta, description) {
                     delta = JSON.stringify(delta)
                     $.post('/ad/editPost/updateContent', {
                         postId: postId,
-                        name: name,
+                        type: type,
                         delta: delta,
                         description: description
                     }, (data) => {
-                        $.notify("Đã lưu thay đổi " + data.name, {
+                        $.notify("Đã lưu thay đổi " + data.type, {
                             globalPosition: "bottom left",
                             className: "info"
                         });
@@ -160,9 +161,9 @@
                 },
                 theme: 'snow'
             });
-            controller.getContent(postId, 'Mô Tả')
+            controller.getContent(postId, 'Nội Dung')
             $('.updateContent').click(function () {
-                controller.updateContent(postId, 'Mô Tả', quill.getContents().ops, quill.getText())
+                controller.updateContent(postId, 'Nội Dung', quill.getContents().ops, quill.getText())
             })
             $('.removeHashtag').click(function () {
                 controller.removeHashtag(postId, this.getAttribute('name'), this.getAttribute('type'))
