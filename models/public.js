@@ -39,22 +39,54 @@ module.exports = {
         Promise.all([
             new Promise((rs, rj) => {
                 linking.find({
-                    "Object.name": "Thi Công",
-                    "object.type": "Loại Bài Viết"
+                    "Object.name": "Xây Dựng Nhà Nuôi Yến",
+                    "Object.type": "Thẻ"
                 }, (err, docs) => {
-                    rs(docs)
+                    var posts = []
+                    docs.forEach(linking => {
+                        posts.push(
+                            new Promise((mnrs, rj) => {
+                                post.findById(linking.pointId, (err, docs) => {
+                                    mnrs(docs)
+                                })
+                            })
+                        )
+                    });
+                    Promise.all(posts)
+                        .then(rst => {
+                            rs(rst)
+                        })
                 }).sort({ modifyDate: 'desc' })
             }),
         ])
             .then(rst => {
                 res.render('public/pages/construct', {
-                    products: rst[0]
+                    posts: rst[0]
                 })
             })
 
     },
     post: function (req, res) {
-        res.render('public/pages/post')
+        Promise.all([
+            new Promise((rs, rj) => {
+                post.find({
+                }, (err, docs) => {
+                    rs(docs)
+                }).sort({ modifyDate: 'desc' })
+            }),
+            new Promise((rs, rj) => {
+                hashtag.find({
+                }, (err, docs) => {
+                    rs(docs)
+                })
+            }),
+        ])
+            .then(rst => {
+                res.render('public/pages/post', {
+                    posts: rst[0],
+                    hashtags: rst[1]
+                })
+            })
     },
     detailProduct: function (req, res) {
 

@@ -20,13 +20,14 @@
                                     <div class="w-100">
                                         <div class="text-center my-4"><img style="width: 150px;"
                                                 src="assets/img/divider.png"></div>
-                                        <div class="list-group"><a
-                                                class="list-group-item list-group-item-action border rounded-0"><span>List
-                                                    Group Item 3</span></a><a
-                                                class="list-group-item list-group-item-action border rounded-0"><span>List
-                                                    Group Item 3</span></a><a
-                                                class="list-group-item list-group-item-action border rounded-0"><span>List
-                                                    Group Item 3</span></a></div>
+                                        <div class="list-group">
+                                            <% hashtags.forEach(hashtag => {%>
+                                            <a
+                                                class="list-group-item list-group-item-action border rounded-0"><span><%=hashtag.name%></span></a>
+                                            <%})
+                                            %>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -34,15 +35,19 @@
                     </div>
                     <div class="col">
                         <div class="text-center my-4"><img style="width: 150px;" src="assets/img/divider.png"></div>
-                        <div class="row">
+                        <%posts.forEach(post => {%>
+                        <div class="row mb-3">
                             <div class="col-4 col-xl-4 d-flex d-md-flex align-items-center align-items-md-center"><img
-                                    class="w-100" src="assets/img/IMG_0211.JPG"></div>
+                                    class="w-100" src="<%=post.images[0]%>"></div>
                             <div class="col-8">
-                                <h6 class="textColor">Hướng Dẫn Xây Nhà Nuôi Yến</h6>
-                                <p>Tóm tắt</p>
+                                <h6 class="textColor"><%=post.name%></h6>
+                                <p><%=post.description%></p>
                             </div>
                         </div>
                         <hr>
+
+                        <%})%>
+
                     </div>
                 </div>
             </div>

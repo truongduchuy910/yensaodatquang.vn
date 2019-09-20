@@ -1,4 +1,3 @@
-<% function formatMoney(n, c, d, t) { var c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "." : d, t = t == undefined ? "," : t, s = n < 0 ? "-" : "", i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))), j = (j = i.length) > 3 ? j % 3 : 0; return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : ""); }; %>
 
 <!DOCTYPE html>
 <html>
@@ -37,56 +36,9 @@
         <div class="text-center my-5 py-4"><img src="assets/img/divider.png" style="width: 100px;"></div>
         <% include ../partials/cam-ket %>
         <div class="text-center my-5 py-4"><img src="assets/img/divider.png" style="width: 100px;"></div>
-        <section data-aos="fade-up" class="py-5" style="background-color: #f4f7f7;">
-            <div class="container">
-                <h3 class="text-center textColor pb-5 pt-2"><strong>Cung Cấp Sản Phẩm &amp; Tư Vấn Thi Công Nhà
-                        Yến</strong><br></h3>
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 d-flex align-items-center">
-                        <div>
-                            <p>Nếu phần biệt dòng Bạch Yến (thô) theo khối lượng, thì ta có thể chia Yến Sào ra thành
-                                các loại dưới đây<br></p>
-                            <ul>
-                                <li><strong>Yến Quan (10g - 20g) ~ Yến Nhà Công Nghệ Đá Loại Đặc Biệt</strong><br></li>
-                                <li><strong>Yến Thiên (8g - 10g) ~ Yến Nhà Công Nghệ Đá Loại 1</strong><br></li>
-                                <li>Yến Bài (nhỏ hơn 6g - 7g)<br></li>
-                                <li>Yến Địa (Nằm dưới cùng của vách núi, đen, bẩn)<br></li>
-                                <li>Yến Vụn (tổ bị vỡ do khai thác hoặc vận chuyển)<br></li>
-                            </ul>
-                            <p>Yến Sào Đất Quảng cung cấp hai loại là Yến Quan và Yến Thiên trong dòng Bạch Yến. Bao gồm
-                                các dạng thô, sơ chế, tươi, chưng sẵn,...<br></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item"
-                                src="https://www.youtube.com/embed/WZ8GlVDt62M"></iframe></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <% include ../partials/thi-cong %>
         <div class="text-center my-5 py-4"><img src="assets/img/divider.png" style="width: 100px;"></div>
-        <section class="pb-5">
-            <div class="container">
-                <h3 class="text-center textColor pb-5 pt-2"><strong>Sản Phẩm</strong><br></h3>
-                <div class="row">
-                    <%products.forEach(product => {
-                        %>
-                    <div class="col-9 col-sm-6 col-md-4 col-lg-3 col-xl-3 m-auto">
-                        <a href="<%=product.url%>">
-                            <div class="shadow"><img class="w-100 mb-4" src="<%=product.images[0]%>">
-                                <h5 class="text-center textColor"><%=product.name%></h5>
-                                <p class="text-center p-0 m-0 font-weight-bold"><%=product.name%></p>
-                                <p class="text-center text-secondary oldPrice pb-4"><%=formatMoney(product.price,0)%>
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <%
-                    })%>
-
-                </div>
-            </div>
-        </section>
+        <%include ../partials/product %>
         <div class="text-center my-5 py-4"><img src="assets/img/divider.png" style="width: 100px;"></div>
         <% include ../partials/reviewblog %> 
     </main>
