@@ -1,0 +1,34 @@
+{
+    "product": {
+        "information": [
+            {
+                "name": "Mô tả",
+                "delta": null
+            }
+        ],
+        "attribute": [
+            {
+                "type": "Thương Hiệu",
+                "values": []
+            },
+            {
+                "type": "Danh Mục",
+                "values": []
+            }
+        ]
+    },
+    "post": {
+        "hashtag": [
+            {
+                "type": "Thẻ",
+                "values": []
+            }
+        ],
+        "content": [
+            {
+                "name": "Nội Dung",
+                "delta": null
+            }
+        ]
+    }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body>
+    <div class="container">
+        <div class="d-flex align-items-center" id="mainLogin">
+            <form id="loginForm" class="user mx-auto" action="/ad/login" method="post">
+                <h5 class="text-center mb-4">Trang Quản Trị Nội Dung</h5>
+                <div class="form-group"><input class="form-control form-control-user" type="text"
+                        placeholder="Nhập tài khoản" name="user"></div>
+                <div class="form-group"><input class="form-control form-control-user" type="password"
+                        id="exampleInputPassword" placeholder="Mật khẩu" name="password"></div><button
+                    class="btn btn-primary btn-block text-white btn-user mb-3" type="submit">Đăng Nhập</button>
+                <%if (message) {%>
+                <div class="alert alert-warning" role="alert">
+                    <%=message%>
+                </div>
+                <%}%>
+            </form>
+        </div>
+    </div>
+    <% include ../partials/script%>
+</body>
+
+</html>

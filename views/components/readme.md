@@ -1,1 +1,0 @@
-1. Trong Component không được sử dụng col
