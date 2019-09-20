@@ -41,10 +41,9 @@ module.exports = function (app) {
 
 }
 function isAd(req, res, next) {
-    next()
-    // if (req.isAuthenticated()) {
-    //     next()
-    // } else {
-    //     res.redirect('/ad/login-require')
-    // }
+    if (req.isAuthenticated()) {
+        next()
+    } else {
+        res.redirect('/ad/login-require')
+    }
 }
