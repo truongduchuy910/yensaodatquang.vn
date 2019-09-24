@@ -26,6 +26,7 @@ mainBanner {
 .mainContent {
   position: relative;
   z-index: 9;
+  margin-top: -5vh;
 }
 
 .demon {
