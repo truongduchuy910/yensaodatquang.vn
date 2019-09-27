@@ -8,7 +8,7 @@
                     <div class="d-flex justify-content-center align-items-center w-100 h-100"
                         style="background-color: rgba(0,0,0,0.5);">
                         <div data-bs-hover-animate="pulse" class="p-5">
-                            <h4 class="textColor"><%=posts[0].name%></h4>
+                            <h2 class="text-white"><%=posts[0].name%></h2>
                             <p class="text-white"><%=posts[0].description%></p>
                         </div>
                     </div>
@@ -25,8 +25,8 @@
             </div>
             <div class="col p-0" data-aos="fade-left" data-aos-delay="150">
                 <a href="<%=posts[1].url%>">
-                    <div class="d-flex justify-content-start align-items-center h-100 w-100">
-                        <div data-bs-hover-animate="pulse" class="p-5">
+                    <div class="d-flex align-items-center h-100 w-100">
+                        <div data-bs-hover-animate="pulse" class="p-4 text-justify">
                             <h4 class="textColor"><%=posts[1].name%></h4>
                             <p><%=posts[1].description%></p>
                         </div>
@@ -38,14 +38,12 @@
                 <div class="row w-100 m-0 p-0">
                         <%if(posts[2]){%>
             <div class="col p-0 m-0" data-aos="flip-up" data-aos-delay="200">
-                <a href="(posts[2].url%>">
+                <a href="<%=posts[2].url%>">
                     <div class="d-flex justify-content-center align-items-center h-100 w-100">
-                        <div class="d-flex justify-content-end align-items-center h-100 w-100">
-                            <div data-bs-hover-animate="pulse" class="p-5">
-                                <h4 class="text-right textColor"><%=posts[2].name%></h4>
-                                <p class="text-right"><%=posts[2].description%></p>
+                            <div data-bs-hover-animate="pulse" class="p-4 text-justify">
+                                <h4 class="textColor"><%=posts[2].name%></h4>
+                                <p class=""><%=posts[2].description%></p>
                             </div>
-                        </div>
                     </div>
                 </a>
             </div>
@@ -60,12 +58,12 @@
     </div>
     <div class="row">
 
-        <% if(posts[2]){%> <div class="col p-0" data-aos="fade-right" data-aos-delay="300">
-                <a href="#">
-                    <div class="d-flex justify-content-end align-items-center h-100 w-100">
-                        <div data-bs-hover-animate="pulse" class="p-5">
-                            <h1 class="text-right textColor"><%=posts[3].name%></h1>
-                            <p class="text-right"><%=posts[3].description%></p>
+        <% if(posts[3]){%> <div class="col p-0" data-aos="fade-right" data-aos-delay="300">
+                <a href="<%=posts[3].url%>">
+                    <div class="d-flex align-items-center h-100 w-100">
+                        <div data-bs-hover-animate="pulse" class="p-5 text-center">
+                            <h1 class="textColor"><%=posts[3].name%></h1>
+                            <p class=""><%=posts[3].description%></p>
                         </div>
                     </div>
                 </a>
