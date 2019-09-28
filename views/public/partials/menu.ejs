@@ -3,9 +3,12 @@
 <script>
     window.fbAsyncInit = function () {
         FB.init({
+	appId: 335701763968445,
+	cookie: true,
             xfbml: true,
             version: 'v4.0'
         });
+    FB.AppEvents.logPageView();   
     };
 
     (function (d, s, id) {
