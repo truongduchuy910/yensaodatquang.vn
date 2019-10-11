@@ -113,6 +113,44 @@ module.exports = {
             hashtags: hashtags
         })
     },
+    guide: async function (req, res) {
+
+        var hashtags = await new Promise((rs, rj) => {
+            hashtag.find({
+            }, (err, docs) => {
+                rs(docs)
+            }).limit(20).sort({ modifyDate: 'desc' })
+        })
+
+        var posts
+
+        var linkings = await new Promise(rs => {
+            linking.find({
+                "Object.name": "Hướng Dẫn"
+            }, (err, docs) => {
+                rs(docs)
+            })
+        })
+
+        var getPosts = []
+        linkings.forEach(linking => {
+
+            var thisPost = new Promise(rs => {
+                post.findById(linking.pointId, (err, docs) => {
+                    rs(docs)
+                }).sort({ modifyDate: 'desc' })
+            })
+
+            getPosts.push(thisPost)
+        })
+
+        posts = await Promise.all(getPosts)
+
+        res.render('public/pages/post', {
+            posts: posts,
+            hashtags: hashtags
+        })
+    },
     detailProduct: async function (req, res) {
         var thisProduct = await new Promise(rs => {
             product.findOne({

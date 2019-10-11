@@ -5,6 +5,7 @@ module.exports = function (app) {
 
         .get('/san-pham', public.listProduct)
         .get('/thi-cong', public.construct)
+        .get('/huong-dan', public.guide)
 
         .get('/tin-tuc', public.post)
         .get('/sp/:url', public.detailProduct)
