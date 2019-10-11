@@ -32,4 +32,6 @@ mainBanner {
 .demon {
   border-bottom: 2px solid brown;
 }
-
+img {
+	width: 100%;
+}
