@@ -146,7 +146,7 @@ module.exports = {
 
         posts = await Promise.all(getPosts)
 
-        res.render('public/pages/post', {
+        res.render('public/pages/guide', {
             posts: posts,
             hashtags: hashtags
         })
