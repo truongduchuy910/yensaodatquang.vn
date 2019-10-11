@@ -40,7 +40,7 @@ module.exports = {
         Promise.all([
             new Promise((rs, rj) => {
                 linking.find({
-                    "Object.name": "Xây Dựng Nhà Nuôi Yến",
+                    "Object.name": "Xây dựng nhà yến",
                     "Object.type": "Thẻ"
                 }, (err, docs) => {
                     var posts = []
