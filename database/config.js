@@ -2,12 +2,11 @@ var mongoose = require('mongoose')
 
 module.exports = function () {
     console.log(process.env.uri)
-    mongoose.connect("mongodb://127.0.0.1:27017/yensaodatquang", { useNewUrlParser: true }, (err) => {
+    mongoose.connect("mongodb://localhost:27017/yensaodatquang?retryWrites=true", { useNewUrlParser: true }, (err) => {
         if (!err) {
             console.log('Kết nối thành công tới mongodb');
         } else {
-            console.log(err)
-            throw err
+            throw err;
         }
     })
     return mongoose
