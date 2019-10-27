@@ -1,8 +1,6 @@
 const express = require('express')
 const path = require('path')
 const PORT = 2000
-// var flash = require('connect-flash');
-// var session = require('express-session');
 const bodyParser = require('body-parser')
 const app = express();
 
