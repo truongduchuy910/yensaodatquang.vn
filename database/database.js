@@ -83,5 +83,14 @@ module.exports = {
     hashtag: mongoose.model('hashtag', mongoose.Schema({
         name: String,
         type: String
+    })),
+    order: mongoose.model('order', mongoose.Schema({
+        product: String,
+        name: String,
+        phone: String,
+        quatity: String,
+        address: String,
+        url: String,
+        image: String,
     }))
 }

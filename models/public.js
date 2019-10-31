@@ -1,4 +1,4 @@
-var { user, post, product, quill, attribute, hashtag, information, linking, content } = require('../database/database')
+var { user, post, product, quill, attribute, hashtag, information, linking, content, order } = require('../database/database')
 var { QuillDeltaToHtmlConverter } = require('quill-delta-to-html');
 
 module.exports = {
@@ -181,6 +181,19 @@ module.exports = {
                     rs(docs)
                 }).limit(4).sort({ modifyDate: "desc" })
             })
+        })
+    },
+    order: function (req, res) {
+        console.log(req.query);
+        order.insertMany(req.query, (err, docs) => {
+            res.redirect('/orderDetail/' + docs[0]._id);
+        })
+
+    },
+    orderDetail: function (req, res) {
+        order.findById(req.params.id, (err, docs) => {
+            console.log(docs);
+            res.render('public/pages/orderDetail', { order: docs });
         })
     },
     detailPost: async function (req, res) {

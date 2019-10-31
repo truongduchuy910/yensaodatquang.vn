@@ -1,4 +1,4 @@
-var { user, post, product, quill, attribute, hashtag, information, linking, content } = require('../database/database')
+var { user, post, product, quill, attribute, hashtag, information, linking, content, order } = require('../database/database')
 var { QuillDeltaToHtmlConverter } = require('quill-delta-to-html');
 var config = require('../config.json')
 var upload = require('./upload')
@@ -136,6 +136,17 @@ module.exports = {
 
             })
         },
+    },
+    listOrder: {
+        render: function (rea, res) {
+            order.find({}, (err, docs) => {
+                console.log(docs);
+                res.render('client/pages/listOrder', {
+                    orders: docs
+                })
+            })
+
+        }
     },
     editPost: {
         render: function (req, res) {

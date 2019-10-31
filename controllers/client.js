@@ -1,4 +1,4 @@
-var { editPost, dashboard, listPost, login, loginRequire, signup, editProduct, listProduct } = require('../models/client')
+var { editPost, dashboard, listPost, login, loginRequire, signup, editProduct, listProduct, listOrder } = require('../models/client')
 var db = require('../models/database')
 var upload = require('../models/upload')
 module.exports = function (app) {
@@ -16,6 +16,7 @@ module.exports = function (app) {
 
         .get('/ad/listProduct', isAd, listProduct.render)
         .get('/ad/listProduct/remove/:id', isAd, listProduct.remove)
+        .get('/ad/listOrder', isAd, listOrder.render)
 
         .get('/ad/editPost/:id', isAd, editPost.render)
         .post('/ad/editPost/createHashtag', isAd, editPost.createHashtag)

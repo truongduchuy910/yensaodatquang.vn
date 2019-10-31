@@ -9,5 +9,7 @@ module.exports = function (app) {
 
         .get('/tin-tuc', public.post)
         .get('/sp/:url', public.detailProduct)
+        .get('/order', public.order)
+        .get('/orderDetail/:id', public.orderDetail)
         .get('/pt/:url', public.detailPost)
 }
