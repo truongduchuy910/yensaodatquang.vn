@@ -1,3 +1,7 @@
+body {
+	font-family: 'Lora', serif;
+	font-size: 1.15rem;
+}
 .nav-item {
   width: 150px;
 }
