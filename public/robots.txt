@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /ad/
 Disallow: /ad/login
-Sitemap: /sitemap.xml
+Sitemap: https://yensaodatquang.vn/sitemap.xml
