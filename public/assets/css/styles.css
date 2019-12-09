@@ -33,7 +33,7 @@ mainBanner {
   border-bottom: 2px solid brown;
 }
 img {
-	width: 100%;
+  width: 100%;
 }
 .btn-order {
   width: 100%;
@@ -45,7 +45,15 @@ img {
   padding: 10px;
 }
 .input-order {
-width: 100%;
-margin-bottom: 10px;
-border: none;
+  width: 100%;
+  margin-bottom: 10px;
+  border: none;
+}
+@media (max-width: 500px) {
+  .mainContent {
+    margin-top: 15px;
+  }
+  .mainBanner {
+    margin-top: 56px;
+  }
 }

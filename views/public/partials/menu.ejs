@@ -1,43 +1,71 @@
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>
-  window.fbAsyncInit = function () {
+  window.fbAsyncInit = function() {
     FB.init({
       xfbml: true,
-      version: 'v4.0'
+      version: "v4.0"
     });
   };
 
-  (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
+  (function(d, s, id) {
+    var js,
+      fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
     fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
+  })(document, "script", "facebook-jssdk");
+</script>
 
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6BSJG2" height="0" width="0"
-    style="display:none;visibility:hidden"></iframe></noscript>
+<noscript
+  ><iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-P6BSJG2"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden"
+  ></iframe
+></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <nav class="navbar navbar-light navbar-expand-md fixed-top bg-light shadow">
   <div class="container">
-    <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle
-        navigation</span><span class="navbar-toggler-icon"></span></button>
-<a href="/huong-dan">
-      <p class="textColor text-uppercase font-weight-bold my-auto mx-3">Cách Chưng Yến Sào?</p>
+    <button
+      data-toggle="collapse"
+      class="navbar-toggler"
+      data-target="#navcol-1"
+    >
+      <span class="sr-only">Toggle navigation</span
+      ><span class="navbar-toggler-icon"></span>
+    </button>
+    <a href="/huong-dan">
+      <p class="textColor text-uppercase font-weight-bold my-auto mx-3">
+        Cách Chưng Yến Sào?
+      </p>
     </a>
 
-        <div class="collapse navbar-collapse" id="navcol-1">
+    <div class="collapse navbar-collapse" id="navcol-1">
       <ul class="nav navbar-nav">
-<img class="mx-auto" style="width: 40px;height:40px;" src="/assets/img/yensao.jpg">
-        <li class="nav-item mx-auto" role="presentation"><a class="nav-link text-center" href="/">TRANG CHỦ</a></li>
-        <li class="nav-item mx-auto" role="presentation"><a class="nav-link text-center" href="/huong-dan">CÁCH CHƯNG</a></li>
-        <li class="nav-item mx-auto" role="presentation"><a class="nav-link text-center" href="/san-pham">SẢN
-            PHẨM</a></li>
-        <li class="nav-item mx-auto" role="presentation"><a class="nav-link text-center" href="/thi-cong">
-            THI CÔNG</a></li>
-        <li class="nav-item mx-auto" role="presentation"><a class="nav-link text-center" href="/tin-tuc">TIN TỨC</a>
+        <img
+          class="mx-auto"
+          style="width: 40px;height:40px;"
+          src="/assets/img/yensao.jpg"
+        />
+        <li class="nav-item mx-auto" role="presentation">
+          <a class="nav-link text-center" href="/">TRANG CHỦ</a>
+        </li>
+        <li class="nav-item mx-auto" role="presentation">
+          <a class="nav-link text-center" href="/huong-dan">CÁCH CHƯNG</a>
+        </li>
+        <li class="nav-item mx-auto" role="presentation">
+          <a class="nav-link text-center" href="/san-pham">SẢN PHẨM</a>
+        </li>
+        <li class="nav-item mx-auto" role="presentation">
+          <a class="nav-link text-center" href="/thi-cong"> THI CÔNG</a>
+        </li>
+        <li class="nav-item mx-auto" role="presentation">
+          <a class="nav-link text-center" href="/tin-tuc">TIN TỨC</a>
         </li>
       </ul>
     </div>
