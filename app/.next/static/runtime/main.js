@@ -5157,7 +5157,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "/home/truongduchuy910/apps/loaloa.me/app/.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "/home/truongduchuy910/apps/yensaodatquang.vn/app/.next");
       return error;
     }
   };
